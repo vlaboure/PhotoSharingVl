@@ -1,0 +1,35 @@
+﻿@model PhotoSharingVl.Models.Photo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+</head>
+<body>
+   @* Model M majuscule==> Photo de Models*@ 
+    @*model m minuscule==> variable dynamique référe à @model du haut*@
+    <h2>@Model.Title</h2>
+    <div>
+        <img width="600" src="@Url.Action("GetImage","Photo",new { id=Model.Id})" />
+        <p>
+            @Html.DisplayFor(model => model.Description)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => model.UserName)
+            @Html.DisplayFor(model => model.UserName)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => model.DateCreation)
+            @Html.DisplayFor(model => model.DateCreation)
+        </p>
+        <p>
+            @Html.ActionLink("back to list","Index")
+        </p>
+    </div>
+</body>
+</html>

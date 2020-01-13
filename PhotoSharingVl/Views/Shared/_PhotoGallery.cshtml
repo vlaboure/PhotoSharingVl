@@ -1,0 +1,23 @@
+﻿@*Partial view pour afficher n out toutes les photos*@
+@model IEnumerable<PhotoSharingVl.Models.Photo>
+
+
+@foreach (var item in Model)     
+{
+    <div class="col-md-4">
+        <H3>
+            @Html.DisplayFor(model => item.Title)
+        </H3>
+        <p>
+            @Html.DisplayFor(Model => item.DateCreation)
+        </p>
+        <p>
+            <img  height="200"src="@Url.Action("GetImage","Photo", new { id = item.Id })" />
+        </p>
+        <p style="font-size:15px">
+            @Html.ActionLink("Display", "Display", new { id = item.Id })
+            @Html.ActionLink("Comment", "Comment", new { id = item.Id })
+            @Html.ActionLink("View comments", "View_Comment", new { id = item.Id })
+        </p>
+    </div>
+}

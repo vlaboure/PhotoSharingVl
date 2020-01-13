@@ -1,0 +1,35 @@
+﻿@model PhotoSharingVl.Models.Photo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View_Comment</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h2>@ViewBag.Title</h2>
+        <p>
+            <img width="400" src="@Url.Action("GetImage","Photo",new { id=Model.Id})" />
+        </p>
+
+        @foreach (var c in Model.Comments)
+        {
+            <div>
+                @Html.LabelFor(model => c.Subject)
+                @Html.EditorFor(model => c.Subject)
+            </div>
+            <div>
+                @Html.LabelFor(model => c.Body)
+                @Html.EditorFor(model => c.Body)
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

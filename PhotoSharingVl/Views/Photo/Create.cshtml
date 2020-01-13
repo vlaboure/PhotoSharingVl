@@ -1,0 +1,58 @@
+﻿@model PhotoSharingVl.Models.Photo
+@{
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div class="contour">
+        <h2>Create A new view</h2>
+        <div>
+            @* ****************************************************** *@
+            @*enctype==>methodde d'encription envoyé au serveur
+                application/x-www-form-urlencoded------->  Default. All characters are encoded before sent
+                        (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
+                multipart/form-data	             ------->  No characters are encoded. This value is required
+                          when you are using forms that have a file upload control POUR LES IMAGES OBLIGE !!!!!!
+                text/plain	                    -------->  Spaces are converted to "+" symbols, but no special characters are encoded
+            Utilisable que en methode Post*@
+            @using (Html.BeginForm("Create", "Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                //ValidationSummary(true)---> Les erreurs de saisi ne suivant pas les annotations apparaissent
+                //                à côté des propriétés de la form
+                @Html.ValidationSummary(true);
+                <p>
+                    @Html.LabelFor(model => model.Title)
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title)
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.PhotoFile)
+                    <input type="file" class="bouton" style="text-align:center" name="Image" />
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.Description)
+                    @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.DateCreation)
+                    @Html.EditorFor(model => model.DateCreation)
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.UserName)
+                    @Html.EditorFor(model => model.UserName)
+                </p>
+                <input type="submit" class="bnForm" value="Create" />
+                @Html.ActionLink("Back to list", "Index")
+            }
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@model PhotoSharingVl.Models.Photo
+@{
+       Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete View @Model.Title</title>
+</head>
+<body>
+    <div class="contour">
+        <h2>Delete a view</h2>
+        <div>
+            @using (Html.BeginForm("Delete", "Photo", FormMethod.Post))
+            {
+                <img width="300" src="@Url.Action("GetImage","Photo", new {id= Model.Id})" />
+                <br />
+                <div class="alert-danger">
+                    <input type="submit" class="bnForm" value="Supprimer la photo" />                    
+                </div>
+                <div >
+                    @Html.ActionLink("Back to list", "Index")
+                </div>
+  
+
+            }
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@model PhotoSharingVl.Models.Comment
+
+@{
+   Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Comment</title>
+</head>
+<body>
+    @using (Html.BeginForm("Comment", "Photo", FormMethod.Post))
+    {
+ 
+        <div class="jumbotron text-center contour">
+            <h2>@ViewBag.Title</h2>
+            <p>
+                <img width="400" src="@Url.Action("GetImage","Photo",new { id=Model.PhotoID})" />
+            </p>
+
+            <div>
+                @Html.LabelFor(model => model.Subject)
+                @Html.EditorFor(model => model.Subject)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Body)
+                @Html.EditorFor(model => model.Body)
+            </div>
+            <input type="submit"  class="bnForm" value="Valider" />
+        </div>
+
+    }
+
+</body>
+</html>
