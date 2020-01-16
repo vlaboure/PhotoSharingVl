@@ -115,6 +115,12 @@ namespace PhotoSharingVl.Controllers
             Photo photo = context.Photos.FirstOrDefault(p => p.Id == id);
             return View(photo);
         }
+
+        public ActionResult SlideShow()
+        {
+            return View("SlideShow", context.Photos.ToList());
+        }
+
         public FileContentResult GetImage(int id)
         {
             Photo photo = context.Photos.Find(id);
@@ -122,6 +128,7 @@ namespace PhotoSharingVl.Controllers
                 return File(photo.PhotoFile,photo.ImageMimeType);
             return null;
         }
+
     }
 }
 

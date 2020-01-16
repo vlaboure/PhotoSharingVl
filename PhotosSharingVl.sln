@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotosSharingVl", "PhotoSharingVl\PhotosSharingVl.csproj", "{6460602E-FDC4-4BBF-A03B-1F8F89352F78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingTests", "PhotoSharingTests\PhotoSharingTests.csproj", "{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6460602E-FDC4-4BBF-A03B-1F8F89352F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6460602E-FDC4-4BBF-A03B-1F8F89352F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6460602E-FDC4-4BBF-A03B-1F8F89352F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
