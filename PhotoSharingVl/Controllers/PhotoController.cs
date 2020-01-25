@@ -1,25 +1,41 @@
 ﻿using PhotoSharingVl.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
+
+using System;
 
 namespace PhotoSharingVl.Controllers
 {
+    [HandleError (View="Error")]
+
     public class PhotoController : Controller
     {
-        private PhotoSharedContext context = new PhotoSharedContext();
+        private IPhotoSharingContext context;
+
+        public PhotoController()
+        {
+            context = new PhotoSharingContext();
+        }
+        public PhotoController(IPhotoSharingContext Context)
+        {
+            context = Context;
+        }
         // GET: Photo
         public ActionResult Index()
         {
             ViewBag.Title = "Photos exemples du site";
             return View("Index");
         }
+
         //retourne une photo en fonction de l'Id
         public ActionResult Display(int id)
         {
-            Photo photo= context.Photos.Find(id);
+            //remplacé car IPhotoSharingContext
+           // Photo photo= context.Photos.Find(id);
+            Photo photo= context.FindPhotoById(id);
             if (photo == null)
                 return HttpNotFound();
             return View(photo);
@@ -57,15 +73,17 @@ namespace PhotoSharingVl.Controllers
                 //remplissage du tableau--- chargement image en mémoire
                 image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
             }
-            context.Photos.Add(photo);
+            context.Add(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            //remplacé car IPhotoSharingContext
+            // Photo photo= context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
             if (photo != null)
                     return View("Delete", photo);
             else
@@ -75,12 +93,14 @@ namespace PhotoSharingVl.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            //remplacé car IPhotoSharingContext
+            // Photo photo= context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
             if(photo==null)
                 return HttpNotFound();
-            context.Photos.Remove(photo);
+            context.Delete(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -103,8 +123,9 @@ namespace PhotoSharingVl.Controllers
         public ActionResult Comment(Photo photo,Comment comment)
         {
    
-                comment.PhotoID = photo.Id;               
-                context.Comments.Add(comment);
+                comment.PhotoID = photo.Id;
+            //remplacé car IPhotoSharingContext
+                context.Add(comment);
                 context.SaveChanges();
                 return RedirectToAction("Index");
              
@@ -116,6 +137,12 @@ namespace PhotoSharingVl.Controllers
             return View(photo);
         }
 
+        public ActionResult DisplayByTitle(string title)
+        {
+            Photo photo = context.Photos.FirstOrDefault(p => p.Title == title);
+            return View("Display",photo);
+        }
+
         public ActionResult SlideShow()
         {
             return View("SlideShow", context.Photos.ToList());
@@ -123,13 +150,13 @@ namespace PhotoSharingVl.Controllers
 
         public FileContentResult GetImage(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
             if (photo != null)
                 return File(photo.PhotoFile,photo.ImageMimeType);
             return null;
         }
-
     }
+
 }
 
 ///********************************************************************************************

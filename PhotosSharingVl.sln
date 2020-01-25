@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotosSharingVl", "PhotoSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingTests", "PhotoSharingTests\PhotoSharingTests.csproj", "{FC27BA3E-BFCC-4181-B1D7-005CF4059E9B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52D83787-BE25-4330-AE42-ADAD05644461}"
+	ProjectSection(SolutionItems) = preProject
+		Alire.txt = Alire.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

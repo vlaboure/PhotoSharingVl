@@ -18,7 +18,7 @@ namespace PhotoSharingVl
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Database.SetInitializer<PhotoSharedContext>(new PhotoSharingInitializer());
+            Database.SetInitializer<PhotoSharingContext>(new PhotoSharingInitializer());
 
         }
     }

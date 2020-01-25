@@ -9,7 +9,7 @@ namespace PhotoSharingVl.Models
 {
     //classe qui fait l'interface entre le projet et la pseudo base
     //pour ce projet les bases sont remplacées par des listes
-    public class PhotoSharingInitializer:DropCreateDatabaseAlways<PhotoSharedContext>
+    public class PhotoSharingInitializer:DropCreateDatabaseAlways<PhotoSharingContext>
     {
         private byte[] GetFileBytes(string path)
         {
@@ -27,7 +27,7 @@ namespace PhotoSharingVl.Models
         }
 
         //Constructeur override
-        protected override void Seed(PhotoSharedContext context)
+        protected override void Seed(PhotoSharingContext context)
         {
             base.Seed(context);
             const int max = 7;

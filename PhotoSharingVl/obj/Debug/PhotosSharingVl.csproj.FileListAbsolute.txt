@@ -87,3 +87,10 @@ G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\obj\Debug\PhotosShar
 G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\obj\Debug\PhotosSharingVl.csproj.CopyComplete
 G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\obj\Debug\PhotoSharingVl.dll
 G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\obj\Debug\PhotoSharingVl.pdb
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\MvcSiteMapProvider.dll
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\MvcSiteMapProvider.WebActivator.dll
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\WebActivatorEx.dll
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\Microsoft.Web.Administration.dll
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\MvcSiteMapProvider.xml
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\MvcSiteMapProvider.WebActivator.pdb
+G:\documents\formations\c#\gk\PhotoSharingVl\PhotoSharingVl\bin\MvcSiteMapProvider.WebActivator.xml
