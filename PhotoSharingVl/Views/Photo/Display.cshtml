@@ -3,17 +3,17 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+@*<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Display</title>
-</head>
-<body>
-   @* Model M majuscule==> Photo de Models*@ 
+</head>*@
+@*<body>*@
+  @* @* Model M majuscule==> Photo de Models*@*@ 
     @*model m minuscule==> variable dynamique référe à @model du haut*@
-    <h2>@Model.Title</h2>
+    @*<h2>@Model.Title</h2>
     <div>
         <img width="600" src="@Url.Action("GetImage","Photo",new { id=Model.Id})" />
         <p>
@@ -32,4 +32,4 @@
         </p>
     </div>
 </body>
-</html>
+</html>*@

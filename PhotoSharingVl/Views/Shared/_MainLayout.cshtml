@@ -9,14 +9,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/content/PhotoSharingStyles.css">
 </head>
 <body>
 
     <div>
         <h1 class="site-page-title">Adventure work photos sharing</h1>
-        <div class="clear-float"></div>
+        <div class="photo-metadata"></div>
         <div id="topMenu">
             @Html.MvcSiteMap().Menu(false, true, true);
+        </div>
+        <div id="breadcrumb">
+            @Html.MvcSiteMap().SiteMapPath();
+        </div>
+        <div>
+            @RenderBody();
         </div>
     </div>
 

@@ -1,5 +1,10 @@
 ***************************le 18/01/20 lab 6 tests interfaces terminé
 ********************
 ***************************le 21/01/20 lab 7 routes et tests routes terminé
+***** ajout de routes dans le RouteConfig et de test de routes dans le projet de test
 *******************
 ******************
+*****  lab 8 ex 2	Task 3
+***************************27/01/20 lab 8 fini 
+********** ajout des layouts et .css et suppression de bootstrap
+***************((((((((((((((((((Problème avec un ; sur mes vues index ))))))))))))))))))

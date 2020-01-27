@@ -4,21 +4,43 @@
 
 @foreach (var item in Model)     
 {
-    <div class="col-md-4">
+    <div class="photo-index-card">
         <H3>
             @Html.DisplayFor(model => item.Title)
         </H3>
         <p>
             @Html.DisplayFor(Model => item.DateCreation)
         </p>
-        <p>
-            <img  height="200"src="@Url.Action("GetImage","Photo", new { id = item.Id })" />
-        </p>
+        @if (item.PhotoFile != null)
+        {
+            <div>
+                <img class="photo-index-card-img" src="@Url.Action("GetImage","Photo", new { id = item.Id })" />
+            </div>
+        }
+        <div class="photo-metadata">
+            <div>
+                <span class="display-label">
+                    Created by: 
+                </span>
+                <span class="display-field">
+                    @Html.DisplayFor(model => item.UserName);
+                </span>
+            </div>
+            <div>
+                <span class="display-label">
+                    Created on :
+                </span>
+                <span class="display-field">
+                    @Html.DisplayFor(model => item.DateCreation);
+                </span>
+            </div>
+        </div>
+
         <p style="font-size:15px">
             @Html.ActionLink("Display", "Display", new { id = item.Id })
             @Html.ActionLink("Comment", "Comment", new { id = item.Id })
             @Html.ActionLink("View comments", "View_Comment", new { id = item.Id })
-            @Html.ActionLink("Index", "Index","Home")
+            @Html.ActionLink("Index", "Index", "Home")
         </p>
     </div>
 }

@@ -155,6 +155,15 @@ namespace PhotoSharingVl.Controllers
                 return File(photo.PhotoFile,photo.ImageMimeType);
             return null;
         }
+
+        /// <summary>
+        ///**************error message avant la création de l'ActionResult SlideShow 
+        /// </summary>
+        /// <returns></returns>
+        //public ActionResult SlideShow()
+        //{
+        //    throw new NotImplementedException("The SlideShow action is not yet ready");
+        //}
     }
 
 }
